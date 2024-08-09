@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xem YouTube để Kiếm Tiền</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Xem YouTube để Kiếm Tiền</h1>
+      <nav>
+        <ul>
+          <li><a href="#" onclick="showSection('home')">Trang chủ</a></li>
+          <li><a href="#" onclick="showSection('tasks')">Nhiệm vụ</a></li>
+          <li><a href="#" onclick="showSection('balance')">Số dư</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Trang chủ -->
+      <section id="home" class="section">
+        <h2>Chào mừng đến với trang web "Xem YouTube để Kiếm Tiền"</h2>
+        <p>Đây là nơi bạn có thể kiếm tiền bằng cách xem các video YouTube.</p>
+      </section>
+
+      <!-- Nhiệm vụ -->
+      <section id="tasks" class="section" style="display: none">
+        <h2>Nhiệm vụ của bạn</h2>
+        <ul>
+          <li>
+            <a
+              href="#"
+              onclick="watchVideo('https://youtube.com/shorts/pN0q735_-4c?si=IgPL5gJc9g8FBt3G')"
+              >Video 1</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="watchVideo('https://youtube.com/shorts/pN0q735_-4c?si=IgPL5gJc9g8FBt3G')"
+              >Video 2</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              onclick="watchVideo('https://youtube.com/shorts/pN0q735_-4c?si=IgPL5gJc9g8FBt3G')"
+              >Video 3</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- Số dư -->
+      <section id="balance" class="section" style="display: none">
+        <h2>Số dư của bạn: <span id="balanceAmount">0</span> đồng</h2>
+        <button onclick="withdraw()">Rút tiền</button>
+        <button onclick="deposit()">Nạp tiền</button>
+
+        <!-- Rút tiền -->
+        <div id="withdrawForm" style="display: none">
+          <h3>Rút tiền</h3>
+          <p>Số tiền tối thiểu để rút là 100,000 đồng.</p>
+          <button onclick="attemptWithdraw()">Xác nhận rút tiền</button>
+          <p id="withdrawError" style="color: red; display: none">
+            Số dư của bạn chưa đủ để rút tiền.
+          </p>
+        </div>
+
+        <!-- Nạp tiền -->
+        <div id="depositForm" style="display: none">
+          <h3>Nạp tiền</h3>
+          <p>Vui lòng chuyển tiền vào tài khoản ngân hàng sau:</p>
+          <p>Ngân hàng: ABC Bank</p>
+          <p>Số tài khoản: 123456789</p>
+          <p>Chủ tài khoản: Nguyễn Văn A</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Xem YouTube để Kiếm Tiền</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
