@@ -9,11 +9,25 @@
   <body>
     <header>
       <h1>Xem YouTube để Kiếm Tiền</h1>
-      <nav>
+      <nav id="nav">
         <ul>
           <li><a href="#" onclick="showSection('home')">Trang chủ</a></li>
-          <li><a href="#" onclick="showSection('tasks')">Nhiệm vụ</a></li>
-          <li><a href="#" onclick="showSection('balance')">Số dư</a></li>
+          <li id="registerLink" style="display: none">
+            <a href="#" onclick="showSection('register')">Đăng ký</a>
+          </li>
+          <li id="loginLink" style="display: none">
+            <a href="#" onclick="showSection('login')">Đăng nhập</a>
+          </li>
+          <!-- Các liên kết sau chỉ hiển thị khi đã đăng nhập -->
+          <li id="tasksLink" style="display: none">
+            <a href="#" onclick="showSection('tasks')">Nhiệm vụ</a>
+          </li>
+          <li id="balanceLink" style="display: none">
+            <a href="#" onclick="showSection('balance')">Số dư</a>
+          </li>
+          <li id="logoutLink" style="display: none">
+            <a href="#" onclick="logout()">Đăng xuất</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -77,6 +91,52 @@
           <p>Số tài khoản: 123456789</p>
           <p>Chủ tài khoản: Nguyễn Văn A</p>
         </div>
+      </section>
+
+      <!-- Đăng ký -->
+      <section id="register" class="section" style="display: none">
+        <h2>Đăng ký</h2>
+        <form id="registerForm" onsubmit="return register()">
+          <label for="registerUsername">Tên đăng nhập:</label>
+          <input
+            type="text"
+            id="registerUsername"
+            name="username"
+            required
+          /><br /><br />
+          <label for="registerPassword">Mật khẩu:</label>
+          <input
+            type="password"
+            id="registerPassword"
+            name="password"
+            required
+          /><br /><br />
+          <input type="submit" value="Đăng ký" />
+        </form>
+        <p id="registerMessage"></p>
+      </section>
+
+      <!-- Đăng nhập -->
+      <section id="login" class="section" style="display: none">
+        <h2>Đăng nhập</h2>
+        <form id="loginForm" onsubmit="return login()">
+          <label for="loginUsername">Tên đăng nhập:</label>
+          <input
+            type="text"
+            id="loginUsername"
+            name="username"
+            required
+          /><br /><br />
+          <label for="loginPassword">Mật khẩu:</label>
+          <input
+            type="password"
+            id="loginPassword"
+            name="password"
+            required
+          /><br /><br />
+          <input type="submit" value="Đăng nhập" />
+        </form>
+        <p id="loginMessage"></p>
       </section>
     </main>
 

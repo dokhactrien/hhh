@@ -1,6 +1,6 @@
+/* Cơ bản cho tất cả các thiết bị */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
 }
@@ -8,7 +8,7 @@ body {
 header {
   background-color: #ff0000;
   color: white;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -22,10 +22,14 @@ nav ul li {
   margin: 0 15px;
 }
 
-nav ul li a {
+footer {
+  background-color: #333;
   color: white;
-  text-decoration: none;
-  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 section {
@@ -37,17 +41,25 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+form {
+  margin: 0;
 }
 
-button {
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
@@ -56,6 +68,15 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+input[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+#error {
+  color: red;
+}
+
+#registerMessage,
+#loginMessage {
+  color: green;
 }
